@@ -4,7 +4,7 @@
       <th></th>
       <th>Title</th>
       <th>Opinion</th>
-      <th>iiineeee</th>
+      <th></th>
       <th colspan="4"></th>
 
     </tr>
@@ -32,6 +32,9 @@
           <% end %>
         </p>
         <% end %>
+        </td>
+        <td>
+         <p><%= link_to "#{book.book_comments.count} コメント" %></p>
         </td>
       </tr>
     <% end %>
