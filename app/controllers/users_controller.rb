@@ -8,6 +8,16 @@ class UsersController < ApplicationController
     @book_comment = BookComment.new
   end
 
+  def follows
+    user = User.find(params[:user_id])
+    @users = user.followings
+  end
+
+  def followers
+    user = User.find(params[:user_id])
+    @users = user.followers
+  end
+
   def index
     @users = User.all
     @book = Book.new
