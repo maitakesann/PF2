@@ -1,0 +1,7 @@
+<table class='table'>
+  <tr><%#= link_to attachment_image_tag(user, :profile_image, :fill, 20, 20, fallback: "no_image.jpg"),book_path(book)%></tr>
+</table>
+
+<div class='row'>
+  <%= link_to '',edit_user_path(user),class: "btn btn-outline-secondary btn-block fas fa-user-cog edit_user_#{user.id}" %>
+</div>

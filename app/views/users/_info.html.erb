@@ -1,11 +1,11 @@
 <table class='table'>
-  <tr><%= attachment_image_tag(user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg") %></tr>
+  <tr><%= attachment_image_tag(user, :profile_image, :fill, 20, 20, fallback: "no_image.jpg") %></tr>
   <tr>
-	  <th>name</th>
+	  <th>名前</th>
 	  <th><%= user.name %></th>
   </tr>
   <tr>
-	  <th>introduction</th>
+	  <th>自己紹介</th>
 	  <th><%= user.introduction %></th>
   </tr>
   <tr>
