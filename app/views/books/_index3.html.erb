@@ -1,0 +1,27 @@
+<div class="list-group">
+    <h5 class="card-header">投稿一覧</h5>
+        <% books.each do |book| %>
+        <div class="list-group-item list-group-horizontal" >
+            <h5 class="card-title"><i class="fab fa-hire-a-helper"></i> <%= link_to book.title, book_path(book), class: "book_#{book.id}" %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><i class="far fa-comment-alt"></i> <%= book.body %></h6>
+            
+            <!--お気に入りview-->
+            <!--もし既にお気に入りしていたらデリート-->
+            <% if book.favorited_by?(current_user) %>
+                <%= link_to book_favorites_path(book.id), method: :delete do %>
+                <i class="fas fa-heart"></i> <%= book.favorites.count %> いいね
+                <% end %>
+             
+            <% else %>
+                <!--そうでなければpost-->
+                <%= link_to book_favorites_path(book.id), method: :post do %>
+                <i class="far fa-heart"></i><%= book.favorites.count %>いいね
+                <% end %>
+                
+            <% end %>
+            <!--コメントview-->
+            <i class="far fa-comment"></i> <%= link_to "#{book.book_comments.count} コメント" %>
+
+        </div>
+        <% end %>
+</div>    
