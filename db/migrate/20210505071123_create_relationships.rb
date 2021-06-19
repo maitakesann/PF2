@@ -5,7 +5,7 @@ class CreateRelationships < ActiveRecord::Migration[5.2]
         t.references :follow, foreign_key: { to_table: :users }
         
         t.integer :follower_id
-        t.integer :following
+        t.integer :following_id
 
         t.timestamps
         

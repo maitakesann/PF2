@@ -1,5 +1,5 @@
 <div class="list-group my-4">
-    <h5 class="card-header">投稿一覧</h5>
+    <h5 class="card-header text-center">投稿一覧</h5>
         <% books.each do |book| %>
         <div class="list-group-item list-group-horizontal mb-4" >
             <h5 class="card-title my-2"><i class="fab fa-hire-a-helper"></i> <%= link_to book.title, book_path(book), class: "book_#{book.id}" %></h5>
