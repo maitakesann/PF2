@@ -11,6 +11,10 @@ class User < ApplicationRecord
   has_many :followings, through: :active_relationships, source: :follower
   has_many :passive_relationships, class_name: "Relationship", foreign_key: :follower_id
   has_many :followers, through: :passive_relationships, source: :following
+
+  has_many :tag_maps, dependent: :destroy
+  has_many :tags, through: :tag_maps
+
   attachment :profile_image, destroy: false
 
   def followed_by?(user)
