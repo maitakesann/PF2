@@ -38,10 +38,10 @@ ActiveRecord::Schema.define(version: 2021_06_19_081136) do
   create_table "relationships", force: :cascade do |t|
     t.integer "user_id"
     t.integer "follow_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer "follower_id"
     t.integer "following_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["follow_id"], name: "index_relationships_on_follow_id"
     t.index ["user_id", "follow_id"], name: "index_relationships_on_user_id_and_follow_id", unique: true
     t.index ["user_id"], name: "index_relationships_on_user_id"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2021_06_19_081136) do
     t.string "name"
     t.text "introduction"
     t.string "profile_image_id"
+    t.boolean "admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
