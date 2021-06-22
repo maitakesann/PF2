@@ -6,20 +6,11 @@
       <h6 class="card-subtitle mb-2 text-muted py-3"><i class="far fa-comment-alt"></i> <%= book.body %></h6>
         <!--お気に入りview-->
         <!--もし既にお気に入りしていたらデリート-->
-        <% if book.favorited_by?(current_user) %>
-            <%= link_to book_favorites_path(book.id), method: :delete do %>
-            <i class="fas fa-heart"></i> <%= book.favorites.count %> いいね
-            <% end %>
-         
-        <% else %>
-            <!--そうでなければpost-->
-            <%= link_to book_favorites_path(book.id), method: :post do %>
-            <i class="far fa-heart"></i><%= book.favorites.count %>いいね
-            <% end %>
-            
-        <% end %>
+        <div id="favorite_buttons_<%= book.id %>">  
+            <%= render 'favorite', book: book %>
+        </div>  
         <!--コメントview-->
-        <i class="far fa-comment"></i> <%= link_to "#{book.book_comments.count} コメント" %>
+        <i class="far fa-comment"></i> <%=  "#{book.book_comments.count} コメント" %>
     </div>
     <% end %>
 </div>    

@@ -2,10 +2,11 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
-    @user = @book.user
     @booknew = Book.new
     @book_comment = BookComment.new
     @book_tags = @book.tags #そのクリックした投稿に紐付けられているタグの取得。  
+    @user = @book.user
+    @tag_list = Tag.all
   end
 
   def index
@@ -52,6 +53,15 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @book.destroy
     redirect_to books_path
+  end
+  
+  def search
+    #@search_books = Book.all
+    if params[:title].present?
+      @books = Book.where('title LIKE ?', "%#{params[:title]}%")
+    else
+      @books = Book.none
+    end
   end
 
   private

@@ -1,9 +1,10 @@
 <div class="list-group my-4">
-    <h1 class="card-header text-center"><%= Tag.find(params[:id]).tag_name %></h1>
+    <h1 class="card-header text-center my-4"><%= Tag.find(params[:id]).tag_name %></h1>
     
     <% @books.each do |book| %>
     <div class="list-group-item list-group-horizontal mb-4" >
-    <h5 class="card-title my-2"><%= book.title %></h5>
-    <h6 class="card-subtitle mb-2 text-muted py-3"><i class="far fa-comment-alt"></i> <%= book.body %></h6>
+      <h5 class="card-title my-2"><%= link_to book.title, book_path(book), class: "book_#{book.id}" %></h5>
+      <h6 class="card-subtitle mb-2 text-muted py-3"><i class="far fa-comment-alt"></i> <%= book.body %></h6>
+    </div>
     <% end %>
 </div>        

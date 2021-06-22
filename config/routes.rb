@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :books do
   resource :favorites, only: [:create, :destroy]
   resources :book_comments, only: [:create, :destroy]
+  get :search, on: :collection
   end
   get 'tags/:id' => 'tag#index', as: 'tag_posts'
 end

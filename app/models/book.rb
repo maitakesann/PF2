@@ -29,6 +29,10 @@ class Book < ApplicationRecord
       self.tags << new_tag
     end
   end
+  
+  def self.search(keyword)
+    where(["title like? OR body like?", "%#{keyword}%", "%#{keyword}%"])
+  end
 
 	validates :title, presence: true
 	validates :body, presence: true, length: {maximum: 200}
