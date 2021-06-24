@@ -1,6 +1,5 @@
 class FavoritesController < ApplicationController
   def create
-    #@favo_book = Book.find(params[:id])
     @book = Book.find(params[:book_id])
     favorite = current_user.favorites.new(book_id: @book.id)
     favorite.save

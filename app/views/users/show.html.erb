@@ -1,21 +1,20 @@
 <div class='container px-5 px-sm-0'>
   <div class='row'>
-    <div class='col-md-8 offset-md-4'>
-        <h1><%= @user.name %>さんの情報</h1>
-        <!--ユーザー情報のrender-->
-        <%= render 'info', user: @user %>
-        <div class='row btn  btn-block mt-4'><%= render 'follow', user: @user %></div>
-          <!--ログインユーザーとユーザーidが一致していれば表示する-->
-          <% if current_user == @user %>
-          <!--新規投稿部分のrender-->
-            <%= render 'books/form2', book: @book %> 
-          <%end%>
-        
-        <h4>投稿した一覧</h4>
-        <div>
-        <!--ユーザーの投稿一覧render-->
-          <%= render 'books/index3',books: @books %>
-        </div>
+    <div class='col-md-4'>
+      <h4 class="text-center py-2"><%= @user.name %>さんの情報</h4>
+      <%= render 'info', user: @user %><!--ユーザー情報のrender-->
+      <div id ="follow_buttons">
+      <%= render 'follow', user: @user %>
+      </div>
+      <%= render 'index',users: @users %>
+    </div>
+    <div class='col-md-8 '>
+      <% if current_user == @user %><!--ログインユーザーとユーザーidが一致していれば表示する-->
+        <%= render 'books/form2', book: @book %><!--新規投稿部分のrender--> 
+      <%end%>
+      <div>
+        <%= render 'books/index3',books: @books %> <!--ユーザーの投稿一覧render-->
+      </div>
     </div>
   </div>
 </div>

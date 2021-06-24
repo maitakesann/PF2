@@ -1,26 +1,26 @@
 <div class='container'>
   <div class='row'>
-    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+    <div class=" mx-auto">
     <h2>ユーザー編集画面</h2>
     <%= form_with model:@user, local:true do |f| %>
       <%= render 'layouts/errors', obj: @user %>
 
-      <div class="container">
+      <div class="container py-2">
         <%= f.label :名前 %>
-        <%= f.text_field :name %>
+        <p><%= f.text_field :name %></p>
       </div>
 
-      <div class="container">
+      <div class="container py-2">
         <%= f.label :プロフィール画像 %>
-        <%= f.attachment_field :profile_image %>
+        <p><%= f.attachment_field :profile_image %></p>
       </div>
 
-      <div class="container">
+      <div class="container py-2">
         <%= f.label :自己紹介文 %>
-        <%= f.text_area :introduction %>
+        <p><%= f.text_area :introduction %></p>
       </div>
 
-      <div class="container">
+      <div class="container py-2">
         <%= f.submit "変更を完了する", class: 'btn btn-secondary' %>
       </div>
     <% end %>

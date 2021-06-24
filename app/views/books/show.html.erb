@@ -1,13 +1,11 @@
 <div class='container'>
   <div class='row'>
     <div class='col-md-3'>
-      <%#= render 'form', book: @booknew %>
       <h2><%= @book.user.name %>さん</h2>
       <%= render 'users/info',user:@user %>
       <%= render 'tag', tag_list: @tag_list %>
     </div>
     <div class='col-md-8 offset-md-1'>
-
   		<h2 class="py-2 text-center"><%= @book.user.name %>さんの投稿</h2>
   		<table class='table'>
   		  <tr>
@@ -24,13 +22,14 @@
           <%end%>
           <td>
             <div id="favorite_buttons_<%= @book.id %>">  
-              <%= render 'favorite', book: @book %>
+              <%= render 'favorites/favorite', book: @book %>
             </div>  
           </td>
         </tr>
       </table>
-        <%= render 'book_comment', book: @book, book_comment: @book_comment %>
-      </div>
+        <div id="comment_buttons_<%= @book.id %>">
+          <%= render 'books/book_comment', book: @book, book_comment: @book_comment %>
+        </div>
     </div>
   </div>
 </div>

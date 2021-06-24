@@ -9,20 +9,17 @@
 	  <th><%= user.introduction %></th>
   </tr>
   <tr>
-    <th>follows</th>
+    <th>フォロー</th>
     <th>
-      <%= link_to "#{user.followings.count}", user_follows_path(user.id) %>
+      <%= link_to "#{user.followings.count}", user_follows_path(user.id), id: "follow_count"%>
     </th>
   </tr>
   <tr>
-    <th>followed</th>
+    <th>フォロワー</th>
     <th>
-      <%= link_to "#{user.followers.count}", user_followers_path(user.id) %>
+      <%= link_to "#{user.followers.count}", user_followers_path(user.id),id: "follower_count" %>
     </th>
   </tr>
-
 </table>
 
-<div class='row'>
   <%= link_to '',edit_user_path(user),class: "btn btn-outline-secondary btn-block fas fa-user-cog edit_user_#{user.id}" %>
-</div>

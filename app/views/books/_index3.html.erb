@@ -7,7 +7,7 @@
         <!--お気に入りview-->
         <!--もし既にお気に入りしていたらデリート-->
         <div id="favorite_buttons_<%= book.id %>">  
-            <%= render 'favorite', book: book %>
+            <%= render 'favorites/favorite', book: book %>
         </div>  
         <!--コメントview-->
         <i class="far fa-comment"></i> <%=  "#{book.book_comments.count} コメント" %>

@@ -1,4 +1,4 @@
-<div class="list-group">
+<div class="list-group my-4">
   <h5 class="card-header text-center">新規投稿</h5>
   <div class="card-body text-center">
       <%= form_with model:book,local:true do |f| %>
@@ -11,7 +11,7 @@
           <%= f.text_field :tag_name,size: "30x5",placeholder: "例：音楽 文芸 スポーツ" %>
         </div>
         
-         <%= f.text_area :body,size: "80x5",placeholder: "本文を入力してください" %>
+         <%= f.text_area :body,size: "30x5",placeholder: "本文を入力してください" %>
         <div>
           <%= f.submit "投稿する", class: 'btn btn-success' %>
         </div>
