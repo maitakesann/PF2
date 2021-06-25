@@ -1,5 +1,4 @@
-<h1>Users#follows</h1>
-<p>Find me in app/views/users/followers.html.erb</p>
+<h1 class="text-center py-3">フォロー一覧</h1>
 
 <% @users.each do |user| %>
     <table class='table'>
@@ -19,7 +18,7 @@
               <p><%= "#{user.followings.count} フォロー数" %></p>
             </td>
             <td>
-              <p><%= "#{user.followers.count} フォロわー数" %></p>
+              <p><%= "#{user.followers.count} フォロワー数" %></p>
             </td>
             <td><%= link_to 'Show', user_path(user), class: "user_#{user.id}" %></td>
         </tr>

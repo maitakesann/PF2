@@ -6,7 +6,7 @@
       <%#= render 'users/info', user: current_user %>
       <%= link_to '検索画面へ', search_books_path %>
             <!--タグ機能のrender-->
-      <%= render 'tag', tag_list: @tag_list %>
+      <div class="text-center"><%= render 'tag', tag_list: @tag_list %></div>
     </div>
     <div class='col-md-8 '>
       <!--投稿一覧表示のrender-->
