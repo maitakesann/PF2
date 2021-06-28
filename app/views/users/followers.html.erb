@@ -1,4 +1,4 @@
-<h1 class="text-center py-3">フォローワー一覧</h1>
+<h1 class="text-center py-3">フォロワー一覧</h1>
 
 
 <% @users.each do |user| %>
@@ -22,7 +22,7 @@
             <td>
               <p><%= "#{user.followers.count} フォロわー数" %></p>
             </td>
-            <td><%= link_to 'Show', user_path(user), class: "user_#{user.id}" %></td>
+            <td><%= link_to '詳細ページへ', user_path(user), class: "user_#{user.id}" %></td>
         </tr>
       
     </tbody>
