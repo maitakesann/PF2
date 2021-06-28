@@ -1,11 +1,9 @@
 <div class='container px-5 px-sm-0'>
   <div class='row'>
     <div class='col-md-4'>
-            <!--新規投稿のrender-->
+      <!--新規投稿のrender-->
       <%= render 'form2', book: @book %>
-      <%#= render 'users/info', user: current_user %>
-      <%= link_to '検索画面へ', search_books_path %>
-            <!--タグ機能のrender-->
+      <!--タグ機能のrender-->
       <div class="text-center"><%= render 'tag', tag_list: @tag_list %></div>
     </div>
     <div class='col-md-8 '>
