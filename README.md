@@ -29,3 +29,6 @@ AWS Cloud9 Ruby ver. 2.6.3 Ruby on rails ver. 5.2.5
 * タグ機能
 * 管理者を付与　コメントの削除を可能に
 * いいね・コメント機能・フォロー機能の非同期通信
+
+#チャレンジ機能一覧
+https://docs.google.com/spreadsheets/d/1Rk6aTQOfv4QKRbG0ZXCJdGB6ORAf2NTDdH0LJl4SMcU/edit#gid=0
