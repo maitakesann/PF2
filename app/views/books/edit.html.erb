@@ -1,10 +1,11 @@
 <div class='container'>
   <div class='row'>
-    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-  		<h1>Editing Book</h1>
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto text-center">
+  		<h1 class="text-center py-2">編集画面</h1>
     	<%= render 'layouts/errors', obj: @book %>
-  		<%= render 'form', book: @book %>
-  		<%= link_to 'Show', book_path(@book), class: "book_#{@book.id}" %> |
-  		<%= link_to 'Back', books_path, class: "back" %>
+  		<%= render 'edit_form', book: @book %>
+  		<%= link_to '投稿詳細画面へ', book_path(@book), class: "book_#{@book.id}" %> |
+  		<%= link_to '投稿一覧ページへ', books_path, class: "back" %>
+  	</div>
   </div>
 </div>
